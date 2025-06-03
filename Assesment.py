@@ -13,3 +13,11 @@ qustions = [
     {"question": "What should you do at a stop sign?", "options": ["Stop completely", "Slow down", "Keep going"], "answer": "Stop completely"},
     {"question": "What does a green light mean?", "options": ["Stop", "Go", "Wait"], "answer": "Go"},
 ]
+
+
+class QuizApp:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Motorcycle Learner Test - Version 1")
+        self.q_index = 0
+        self.score = 0
