@@ -15,9 +15,15 @@ qustions = [
 ]
 
 
+#This is the main class that manages the quiz application
 class QuizApp:
     def __init__(self, master):
         self.master = master
         self.master.title("Motorcycle Learner Test - Version 1")
-        self.q_index = 0
+        self.master.geometry("600x400")
+
+        #initialize score and question index
+        self.question_index = 0
         self.score = 0
+
+        
