@@ -36,10 +36,6 @@ class QuizApp:
         self.question_index = 0
         self.score = 0
 
-        # Quiz container frame (box around quiz)
-        self.quiz_frame = tk.Frame(master, bd=2, relief="groove", padx=20, pady=20)
-        self.quiz_frame.pack(pady=30)
-
 
         #create a label to display the question
         self.question_label = tk.Label(master, text="", wraplength=500, font=("Arial", 14), justify="center")
