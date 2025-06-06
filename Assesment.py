@@ -50,7 +50,7 @@ class QuizApp:
         if self.question_index < len(questions): # Changed 'question' to 'questions'
             current_q_data = questions[self.question_index] # Get the dictionary for the current question
             self.question_label.config(text=f"Q{self.question_index + 1}: {current_q_data['question']}")
-            self.selected_option.set(None) # Deselect any previously selected option
+            self.selected_option.set(None) # Reset the selected option
 
             # Update radio buttons with options from the current question
             for i in range(len(current_q_data['options'])):
@@ -66,7 +66,7 @@ class QuizApp:
 
     #this method checks the selected and moves to the next question
     def next_question(self):
-        selected = self.selected_option.get()
+        selected = self.selected_option.get() 
         if selected:
             correct_answer = questions[self.question_index]['answer'] # Access 'answer' key
             if selected == correct_answer:
@@ -86,6 +86,6 @@ class QuizApp:
 
     #this part creates the main windows and runs the application
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = QuizApp(root)
-    root.mainloop()
+        root = tk.Tk()
+        app = QuizApp(root)
+        root.mainloop()
