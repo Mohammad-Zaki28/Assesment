@@ -12,6 +12,16 @@ questions = [
     {"question": "Where should you look when turning?", "options": ["Behind", "Left", "Direction you're going"], "answer": "Direction you're going"},
     {"question": "What should you do at a stop sign?", "options": ["Stop completely", "Slow down", "Keep going"], "answer": "Stop completely"},
     {"question": "What does a green light mean?", "options": ["Stop", "Go", "Wait"], "answer": "Go"},
+    {"question": "When must you use indicators?", "options": ["Always", "Never", "Only on highways"], "answer": "Always"},
+    {"question": "What should you do in heavy rain?", "options": ["Ride faster", "Be more cautious", "Stop immediately"], "answer": "Be more cautious"},
+    {"question": "Can you ride without a licence?", "options": ["Yes", "No", "Sometimes"], "answer": "No"},
+    {"question": "Who has right of way at roundabouts?", "options": ["Vehicles on your left", "You always", "Vehicles from your right"], "answer": "Vehicles from your right"},
+    {"question": "What is the speed limit in urban areas?", "options": ["30 km/h", "50 km/h", "70 km/h"], "answer": "50 km/h"},
+    {"question": "Why should you shoulder check?", "options": ["For fun", "To check blind spots", "To impress others"], "answer": "To check blind spots"},
+    {"question": "What does a flashing red light mean?", "options": ["Go", "Slow down", "Stop"], "answer": "Stop"},
+    {"question": "When should you use high beam?", "options": ["In daylight", "When alone at night", "In fog"], "answer": "When alone at night"},
+    {"question": "What is the purpose of road signs?", "options": ["Confuse riders", "Give information", "Decorate streets"], "answer": "Give information"},
+    {"question": "Can you park on a footpath?", "options": ["Yes", "No", "Only at night"], "answer": "No"},
 ]
 
 
