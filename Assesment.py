@@ -97,12 +97,13 @@ class QuizApp:
 
     def show_result(self):
         total_score = 20  # Version 2: Out of 20
-        passed = self.score > 33
+        # Version 2: Pass if score is 17 or more
+        passed = self.score >= 17
         result_msg = f"You scored {self.score} out of {total_score}"
         if passed:
             self.result_label.config(text=result_msg + "\nCongratulations! You passed.", fg="green")
         else:
-            self.result_label.config(text=result_msg + "\nCongratulations! You have failed.", fg="red")
+            self.result_label.config(text=result_msg + "\nSorry! You failed.", fg="red")
 
         self.next_button.config(state="disabled")
         
