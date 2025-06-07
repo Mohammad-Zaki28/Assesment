@@ -72,7 +72,7 @@ class QuizApp:
             # Version 2: Numbered options (1. Stop etc.)
             for i in range(len(current_q['options'])):
                 text = f"{i + 1}. {current_q['options'][i]}"
-                self.radio_buttons[i].config(text=text, value=current_q['options'][i])
+                self.radio_buttons[i].config(text=text,value=current_q['options'][i])
                 self.radio_buttons[i].pack(anchor="w", padx=100)
 
             for i in range(len(current_q['options']), len(self.radio_buttons)):
@@ -101,12 +101,12 @@ class QuizApp:
         passed = self.score >= 17
         result_msg = f"You scored {self.score} out of {total_score}"
         if passed:
-            self.result_label.config(text=result_msg + "\nCongratulations! You passed.", fg="green")
+            self.result_label.config(text=result_msg + "\nCongratulations! You have passed.", fg="green")
         else:
-            self.result_label.config(text=result_msg + "\nSorry! You failed.", fg="red")
+            self.result_label.config(text=result_msg + "\nCongratulations! You have failed.", fg="red")
 
         self.next_button.config(state="disabled")
-        
+
 if __name__ == "__main__":
     root = tk.Tk()
     app = QuizApp(root)
