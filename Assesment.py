@@ -66,7 +66,7 @@ class QuizApp:
     def load_question(self):
         if self.question_index < len(questions):
             current_q = questions[self.question_index]
-            self.question_label.config(text=f"Q{self.question_index + 1}: {current_q['question']}")
+            self.question_label.config(text=f"Q{self.question_index + 1}: {current_q["question"]}")
             self.selected_option.set(None)
 
             # Version 2: Numbered options (1. Stop etc.)
