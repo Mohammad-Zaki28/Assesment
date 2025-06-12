@@ -34,11 +34,11 @@ class QuizApp:
         self.question_index = 0
         self.score = 0
 
-        # Version 2: Add frame for question box
+
         self.question_frame = tk.Frame(master, bd=2, relief="groove", padx=10, pady=10)
         self.question_frame.pack(pady=20)
 
-        # Version 2: Question label inside frame
+        
         self.question_label = tk.Label(self.question_frame, text="", wraplength=500, font=("Arial", 14), justify="center")
         self.question_label.pack()
 
@@ -49,15 +49,15 @@ class QuizApp:
             btn.pack(anchor="w", padx=100)
             self.radio_buttons.append(btn)
 
-        # Version 2: Styled Next button
+ 
         self.next_button = tk.Button(master, text="Next", command=self.next_question, font=("Arial", 12), bg="#4CAF50", fg="white")
         self.next_button.pack(pady=10)
 
-        # Version 2: Warning label if no answer is selected
+       
         self.warning_label = tk.Label(master, text="", fg="red", font=("Arial", 10))
         self.warning_label.pack()
 
-        # Version 2: Result label at the bottom
+      
         self.result_label = tk.Label(master, text="", font=("Arial", 14))
         self.result_label.pack(pady=10)
 
@@ -69,7 +69,7 @@ class QuizApp:
             self.question_label.config(text=f"Q{self.question_index + 1}: {current_q["question"]}")
             self.selected_option.set(None)
 
-            # Version 2: Numbered options (1. Stop etc.)
+       
             for i in range(len(current_q['options'])):
                 text = f"{i + 1}. {current_q['options'][i]}"
                 self.radio_buttons[i].config(text=text,value=current_q['options'][i])
@@ -83,11 +83,11 @@ class QuizApp:
 
     def next_question(self):
         selected = self.selected_option.get()
-        if selected == "" or selected is None:  # Version 2: Block if no selection
+        if selected == "" or selected is None: 
             self.warning_label.config(text="Please select an answer before continuing.")
             return
         else:
-            self.warning_label.config(text="")  # Clear warning
+            self.warning_label.config(text="") 
 
             correct_answer = questions[self.question_index]['answer']
             if selected == correct_answer:
@@ -96,8 +96,7 @@ class QuizApp:
             self.load_question()
 
     def show_result(self):
-        total_score = 20  # Version 2: Out of 20
-        # Version 2: Pass if score is 17 or more
+        total_score = 20 
         passed = self.score >= 17
         result_msg = f"You scored {self.score} out of {total_score}"
         if passed:
