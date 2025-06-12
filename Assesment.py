@@ -15,22 +15,22 @@ questions = [
 ]
 
 
-#This is the main class that manages the quiz application
+
 class QuizApp:
     def __init__(self, master):
         self.master = master
         self.master.title("Motorcycle Learner Test - Version 1")
         self.master.geometry("600x400")
 
-        #initialize score and question index
+
         self.question_index = 0
         self.score = 0
 
-        #create a label to display the question
+
         self.question_label = tk.Label(master, text="", wraplength=500, font=("Arial", 14), justify="center")
         self.question_label.pack(pady=20)
 
-        #create radio buttons for answers options
+
         self.selected_option = tk.StringVar()
         self.radio_buttons = []
         for i in range(4):
@@ -38,37 +38,37 @@ class QuizApp:
             btn.pack(anchor="w", padx=100)
             self.radio_buttons.append(btn)
 
-        #button to go to the next question
+
         self.next_button = tk.Button(master, text="Next", command=self.next_question, font=("Arial", 12))
         self.next_button.pack(pady=20)
 
-        #load the first question
+
         self.load_question()
 
-      #this methos loads the current question and its answers
+
     def load_question(self):
         if self.question_index < len(questions): # Changed 'question' to 'questions'
-            current_q_data = questions[self.question_index] # Get the dictionary for the current question
+            current_q_data = questions[self.question_index] 
             self.question_label.config(text=f"Q{self.question_index + 1}: {current_q_data['question']}")
-            self.selected_option.set(None) # Reset the selected option
+            self.selected_option.set(None)
 
-            # Update radio buttons with options from the current question
-            for i in range(len(current_q_data['options'])):
+
+        for i in range(len(current_q_data['options'])):
                 self.radio_buttons[i].config(text=current_q_data['options'][i], value=current_q_data['options'][i])
-                self.radio_buttons[i].pack(anchor="w", padx=100) # Ensure the button is visible
+                self.radio_buttons[i].pack(anchor="w", padx=100) 
 
-            # Hide any extra radio buttons if there are fewer options for a question
-            for i in range(len(current_q_data['options']), len(self.radio_buttons)):
+
+        for i in range(len(current_q_data['options']), len(self.radio_buttons)):
                 self.radio_buttons[i].pack_forget()
 
         else:
             self.show_result()
 
-    #this method checks the selected and moves to the next question
+
     def next_question(self):
         selected = self.selected_option.get() 
         if selected:
-            correct_answer = questions[self.question_index]['answer'] # Access 'answer' key
+            correct_answer = questions[self.question_index]['answer'] 
             if selected == correct_answer:
                 self.score += 1
             self.question_index += 1
