@@ -44,7 +44,7 @@ class QuizApp:
 
 
         self.load_question()
-
+        
 
     def load_question(self):
         if self.question_index < len(questions): # Changed 'question' to 'questions'
@@ -53,12 +53,12 @@ class QuizApp:
             self.selected_option.set(None)
 
 
-        for i in range(len(current_q_data['options'])):
+            for i in range(len(current_q_data['options'])):
                 self.radio_buttons[i].config(text=current_q_data['options'][i], value=current_q_data['options'][i])
-                self.radio_buttons[i].pack(anchor="w", padx=100) 
+                self.radio_buttons[i].pack(anchor="w", padx=100)
 
 
-        for i in range(len(current_q_data['options']), len(self.radio_buttons)):
+            for i in range(len(current_q_data['options']), len(self.radio_buttons)):
                 self.radio_buttons[i].pack_forget()
 
         else:
